@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  score_tag: MyString
+  confidence: 1
+  agreement: MyString
+  subjectivity: MyString
+  irony: MyString
+  text_excerpt: MyString
+
+two:
+  score_tag: MyString
+  confidence: 1
+  agreement: MyString
+  subjectivity: MyString
+  irony: MyString
+  text_excerpt: MyString

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Textfiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>File url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @textfiles.each do |textfile| %>
+      <tr>
+        <td><%= textfile.file_url %></td>
+        <td><%= link_to 'Show', textfile %></td>
+        <td><%= link_to 'Edit', edit_textfile_path(textfile) %></td>
+        <td><%= link_to 'Destroy', textfile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Textfile', new_textfile_path %>

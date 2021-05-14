@@ -1,0 +1,17 @@
+<section>
+  <% if flash[:alert] %>
+    <aside class="notice"> <%=flash[:alert] %></aside>
+  <% end %>
+
+  <%= form_tag do%>
+  <h2>Authenitcate</h2>
+  <div>
+    <%= label_tag :email, "Email: " %>
+    <%= text_field_tag :email, params[:email] %>
+  </div>
+  
+  <div class="actions">
+    <%= submit_tag "Authenitcate"%>
+  </div>
+  <% end %>
+</section>
