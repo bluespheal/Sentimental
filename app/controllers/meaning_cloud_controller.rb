@@ -1,0 +1,2 @@
+class MeaningCloudController < ApplicationController
+end

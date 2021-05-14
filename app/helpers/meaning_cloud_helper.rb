@@ -1,0 +1,2 @@
+module MeaningCloudHelper
+end
