@@ -1,22 +1,22 @@
-<%= form_with(model: textfile) do |form| %>
-  <% if textfile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(textfile.errors.count, "error") %> prohibited this textfile from being saved:</h2>
+<%= form_with(model: @textfile, local: true) do |form| %>
+   <% if @textfile.errors.any? %>
+     <div id="error_explanation">
+       <h2><%= pluralize(@textfile.errors.count, "error") %> prohibited this @textfile from being saved:</h2>
 
-      <ul>
-        <% textfile.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+       <ul>
+         <% @textfile.errors.full_messages.each do |message| %>
+           <li><%= message %></li>
+         <% end %>
+       </ul>
+     </div>
+   <% end %>
 
-  <div class="field">
-    <%= form.label :file_url %>
-    <%= form.text_field :file_url %>
-  </div>
+   <div class="field">
+     <%= form.label :text_file %>
+     <%= form.file_field :text_file %>
+   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+   <div class="actions">
+     <%= form.submit "Upload" %>
+   </div>
+ <% end %>

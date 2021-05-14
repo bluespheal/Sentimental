@@ -15,10 +15,6 @@ class ResultsController < ApplicationController
     @result = Result.new
   end
 
-  # GET /results/1/edit
-  def edit
-  end
-
   # POST /results or /results.json
   def create
     @result = Result.new(result_params)
@@ -29,19 +25,6 @@ class ResultsController < ApplicationController
         format.json { render :show, status: :created, location: @result }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @result.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /results/1 or /results/1.json
-  def update
-    respond_to do |format|
-      if @result.update(result_params)
-        format.html { redirect_to @result, notice: "Result was successfully updated." }
-        format.json { render :show, status: :ok, location: @result }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @result.errors, status: :unprocessable_entity }
       end
     end
@@ -64,6 +47,7 @@ class ResultsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def result_params
+      params.require(:result).permit(:score_tag, :confidence, :agreement, :subjectivity, :irony, :text_excerpt)
       params.fetch(:result, {})
     end
 end

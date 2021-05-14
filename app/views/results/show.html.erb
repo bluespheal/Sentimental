@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_result_path(@result) %> |
+<div><%= "Score_tag: #{@result.score_tag}" %></div>
+<div><%= "Confidence: #{@result.confidence}" %></div>
+<div><%= "Agreement: #{@result.agreement}" %></div>
+<div><%= "Subjectivity: #{@result.subjectivity}" %></div>
+<div><%= "Irony: #{@result.irony}" %></div>
+<div><%= "#{@result.text_excerpt}" %></div>
+
 <%= link_to 'Back', results_path %>

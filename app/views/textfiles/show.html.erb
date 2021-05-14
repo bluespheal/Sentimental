@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>File url:</strong>
-  <%= @textfile.file_url %>
+  <strong>Results are:</strong>
+  <%= link_to 'Here', result_path(@textfile.id) %>
 </p>
 
-<%= link_to 'Edit', edit_textfile_path(@textfile) %> |
 <%= link_to 'Back', textfiles_path %>

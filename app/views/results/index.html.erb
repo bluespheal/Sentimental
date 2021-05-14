@@ -12,8 +12,14 @@
   <tbody>
     <% @results.each do |result| %>
       <tr>
+        <td><%= "Score_tag: #{result.score_tag}" %></td>
+        <td><%= "Confidence: #{result.confidence}" %></td>
+        <td><%= "Agreement: #{result.agreement}" %></td>
+        <td><%= "Subjectivity: #{result.subjectivity}" %></td>
+        <td><%= "Irony: #{result.irony}" %></td>
+        <td><%= "#{result.text_excerpt}" %></td>
+
         <td><%= link_to 'Show', result %></td>
-        <td><%= link_to 'Edit', edit_result_path(result) %></td>
         <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -22,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Result', new_result_path %>
+<%= link_to 'Upload more', textfiles_path %>
